@@ -181,9 +181,11 @@ nav {
         .container-nav-links {
 
             @media (max-width:1250px) {
-                transition: .5s all cubic-bezier(0.4, 0, 0.2, 1);
+                transition: .5s all cubic-bezier(0.4, 0, 0.2, 1),
+                    .5s border-radius ease-in-out;
                 background: $main-blue-blur;
                 backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
                 padding: 20px;
                 z-index: 1;
                 position: fixed;
@@ -194,9 +196,14 @@ nav {
                 right: -80dvh;
                 opacity: 0;
                 pointer-events: none;
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+                scale: 0.5;
 
                 &.show {
                     right: 0;
+                    scale: 1;
+                    border-radius: 0;
                     opacity: 1;
                     pointer-events: all;
 
@@ -336,6 +343,7 @@ nav {
     &.scrolling {
         background-color: #0000006f;
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
 
         .container {
             .logo {
