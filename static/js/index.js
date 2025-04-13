@@ -131,7 +131,7 @@ animatedElements.forEach((element) => {
 
     case "slide-left":
       animate(element, {
-        translateX: [-100, 0],
+        translateX: [-400, 0],
         opacity: [0, 1],
         duration: 800,
         easing: "easeOutExpo",
@@ -143,7 +143,7 @@ animatedElements.forEach((element) => {
 
     case "slide-right":
       animate(element, {
-        translateX: [100, 0],
+        translateX: [400, 0],
         opacity: [0, 1],
         duration: 800,
         easing: "easeOutExpo",

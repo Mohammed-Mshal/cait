@@ -1,0 +1,51 @@
+* {
+    font-family: "Cairo", sans-serif;
+}
+
+nav .container .actions .language span {
+    font-family: "Poppins", serif;
+}
+
+.banner .pagination-slide {
+    right: auto;
+    left: 40px;
+}
+
+@media (max-width: 992px) {
+    .banner .pagination-slide {
+        left: 50%;
+    }
+}    
+
+.base-btn img {
+    scale: -1;
+}
+
+.base-btn:hover img {
+    translate: -6px 0;
+}
+
+.more-about .trangle {
+    right: auto;
+    left: 40px;
+    rotate: 135deg;
+}
+
+.more-about .circle {
+    left: auto;
+    right: 0;
+    translate: 20% -20%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 800%;
+}
+
+.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text a .arrow,
+
+.news .container .sliderNews .swiper-slide .body-slide .container-text .showmoretext .arrow {
+    scale: -1;
+}
+
+.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text a:hover .arrow,
+.news .container .sliderNews .swiper-slide .body-slide .container-text .showmoretext:hover .arrow {
+    translate: -10px 0;
+}

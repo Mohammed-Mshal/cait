@@ -281,8 +281,9 @@ nav {
                 display: flex;
                 align-items: center;
                 gap: 10px;
-
-
+                span{
+                    font-family: "Cairo", sans-serif;
+                }
                 img {
                     height: 20px;
                     width: 20px;

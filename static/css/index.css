@@ -540,6 +540,9 @@ nav .container .actions .language {
   align-items: center;
   gap: 10px;
 }
+nav .container .actions .language span {
+  font-family: "Cairo", sans-serif;
+}
 nav .container .actions .language img {
   height: 20px;
   width: 20px;
@@ -620,6 +623,12 @@ nav.scrolling .container .logo {
   justify-content: center;
   padding-block: 150px;
   height: 800px;
+}
+@media (max-width: 992px) {
+  .banner .swiper-banner .swiper-slide {
+    padding-block: 80px;
+    height: 700px;
+  }
 }
 .banner .swiper-banner .swiper-slide:not(.swiper-slide-active) {
   opacity: 0 !important;
@@ -780,7 +789,7 @@ nav.scrolling .container .logo {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-block: clamp(32px, 5vw, 80px);
+  padding-block: clamp(32px, 5vw, 60px);
   gap: 50px;
 }
 @media (max-width: 1024px) {
@@ -936,7 +945,7 @@ nav.scrolling .container .logo {
 .more-about .container {
   display: flex;
   gap: 32px;
-  padding-block: clamp(40px, 5.4vw, 120px);
+  padding-block: clamp(40px, 5.4vw, 60px);
   justify-content: space-around;
 }
 .more-about .container .images-part {
@@ -1032,7 +1041,7 @@ nav.scrolling .container .logo {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-block: clamp(32px, 4vw, 80px);
+  padding-block: clamp(32px, 4vw, 60px);
   gap: 50px;
 }
 @media (max-width: 1024px) {
@@ -1164,7 +1173,7 @@ nav.scrolling .container .logo {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-block: clamp(32px, 4vw, 80px);
+  padding-block: clamp(32px, 4vw, 60px);
   gap: 50px;
 }
 @media (max-width: 1024px) {
@@ -1245,7 +1254,7 @@ nav.scrolling .container .logo {
   box-orient: vertical;
   margin-bottom: 0;
 }
-.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text .showmoretext {
+.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text a {
   background: none;
   border: none;
   padding-block: 0;
@@ -1256,13 +1265,17 @@ nav.scrolling .container .logo {
   align-items: center;
   gap: 20px;
   margin-top: 8px;
+  text-decoration: none;
+  color: #1e1e1e;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text .showmoretext .arrow {
+.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text a .arrow {
   display: flex;
   align-items: center;
   transition: 0.3s all ease-in-out;
 }
-.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text .showmoretext:hover .arrow {
+.upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text a:hover .arrow {
   translate: 10px;
 }
 .upcoming-events .container .sliderEvents .swiper-slide .body-slide .container-text:has(.showmoretext.showall) :is(.title-slide, .text-slide) {
