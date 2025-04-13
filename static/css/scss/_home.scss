@@ -10,9 +10,11 @@
             justify-content: center;
             padding-block: 150px;
             height: 800px;
-            &:not(.swiper-slide-active){
+
+            &:not(.swiper-slide-active) {
                 opacity: 0 !important;
             }
+
             .background-slide {
                 position: absolute;
                 top: 0;
@@ -34,21 +36,180 @@
 
                 .subtitle {
                     font-size: clamp(16px, 2vw, 24px);
-                    color: $main-yellow;
+                    color: $light-blue;
                     font-weight: bold;
                     margin: 0;
                 }
-                
+
                 .title {
                     font-size: clamp(24px, 4vw, 48px);
                     font-weight: 600;
                     color: white;
                 }
-                .description{
+
+                .description {
                     padding-bottom: 20px;
                     font-size: 18px;
                     font-weight: 300;
                 }
+            }
+        }
+    }
+}
+
+.projects-services {
+    .container {
+        padding-block: 80px;
+    }
+}
+
+.news {
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-block: clamp(32px, 3vw, 60px);
+
+        @media (max-width:1024px) {
+            gap: 32px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .sliderNews {
+            width: 100%;
+            height: 100%;
+
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                max-width: 500px;
+
+                @media (max-width:700px) {
+                    max-width: 100%;
+                }
+
+                .header-image {
+                    height: 245px;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    -webkit-border-radius: 12px;
+                    -moz-border-radius: 12px;
+                    -ms-border-radius: 12px;
+                    -o-border-radius: 12px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .body-slide {
+                    display: flex;
+                    flex-direction: column;
+
+                    .date {
+                        color: #1F97D3;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+
+                    .title-slide {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #1E1E1E;
+                        margin-bottom: 14px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        line-clamp: 1;
+                        overflow: hidden;
+                        -moz-box-orient: vertical;
+                        -webkit-box-orient: vertical;
+                        padding-inline-end: 12px;
+                    }
+
+                    .container-text {
+                        .text-slide {
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
+                            letter-spacing: -0.14000000059604645px;
+                            color: #959595;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            line-clamp: 2;
+                            overflow: hidden;
+                            -moz-box-orient: vertical;
+                            -webkit-box-orient: vertical;
+                            box-orient: vertical;
+                            margin-bottom: 0;
+                        }
+
+                        .showmoretext {
+                            background: none;
+                            border: none;
+                            padding-block: 0;
+                            font-weight: bold;
+                            transition: .5s all ease-in-out;
+                            position: relative;
+                            cursor: pointer;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 0px;
+                                left: 50%;
+                                translate: -50% 0;
+                                transition: .3s all ease-in-out;
+                                width: 0px;
+                                height: 1px;
+                                background: $main-blue;
+                            }
+
+                            &:hover::before {
+                                width: 100%;
+                            }
+                        }
+
+                        &:has(.showmoretext.showall) :is(.title-slide, .text-slide) {
+                            -webkit-line-clamp: initial;
+                            line-clamp: initial;
+                        }
+
+                    }
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        color: #1E1E1E;
+                        text-decoration: none;
+                        width: fit-content;
+
+                        img {
+                            transition: .3s all ease;
+                            -webkit-transition: .3s all ease;
+                            -moz-transition: .3s all ease;
+                            -ms-transition: .3s all ease;
+                            -o-transition: .3s all ease;
+                        }
+
+                        &:hover {
+                            img {
+                                translate: 10px 0;
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }

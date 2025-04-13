@@ -4,6 +4,7 @@ nav {
     left: 0;
     width: 100%;
     z-index: 10;
+    transition: .5s all cubic-bezier(0.4, 0, 0.2, 1);
 
     .container {
         display: flex;
@@ -20,6 +21,7 @@ nav {
             flex: 1 1 0;
             max-width: 200px;
             min-width: 80px;
+            transition: .5s all ease;
 
             @media (max-width:1500px) {
                 max-width: 160px;
@@ -88,7 +90,7 @@ nav {
                         left: 50%;
                         translate: -50% 0;
                         transition: .5s all cubic-bezier(0.075, 0.82, 0.165, 1);
-                        background: $main-yellow;
+                        background: $light-blue;
                     }
 
                 }
@@ -123,7 +125,7 @@ nav {
                         transition: .3s all ease;
 
                         &:hover {
-                            color: $main-yellow;
+                            color: $light-blue;
                         }
                     }
 
@@ -136,7 +138,7 @@ nav {
                 }
 
                 &>a.active {
-                    color: $main-yellow;
+                    color: $light-blue;
 
                     &::before {
                         width: 100%;
@@ -152,7 +154,7 @@ nav {
 
                     &>a,
                     &>a.active {
-                        color: $main-yellow;
+                        color: $light-blue;
 
                         &::before {
                             width: 100%;
@@ -326,6 +328,25 @@ nav {
             @media (max-width:1250px) {
                 .base-btn.white-btn.citeBTN {
                     display: none;
+                }
+            }
+        }
+    }
+
+    &.scrolling {
+        background-color: #0000006f;
+        backdrop-filter: blur(20px);
+
+        .container {
+            .logo {
+                max-width: 160px;
+
+                @media (max-width:1500px) {
+                    max-width: 140px;
+                }
+
+                @media (max-width:1400px) {
+                    max-width: 120px;
                 }
             }
         }
