@@ -207,11 +207,56 @@ const containerNewsText = document.querySelectorAll(".container-text");
 
 containerNewsText.forEach((containerText) => {
   const showMoreBTN = containerText.querySelector(".showmoretext");
-  showMoreBTN.addEventListener("click", () => {
-    showMoreBTN.classList.contains("showall")
-      ? showMoreBTN.classList.remove("showall")
-      : showMoreBTN.classList.add("showall");
-    showMoreBTN.querySelector(".text-button").textContent =
-      !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+  showMoreBTN &&
+    showMoreBTN.addEventListener("click", () => {
+      showMoreBTN.classList.contains("showall")
+        ? showMoreBTN.classList.remove("showall")
+        : showMoreBTN.classList.add("showall");
+      showMoreBTN.querySelector(".text-button").textContent =
+        !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+    });
+});
+
+const languageBTN = document.querySelector('.language')
+languageBTN &&
+  languageBTN.addEventListener('click', () => {
+    const newPath = location.href.includes('/ar/') ? location.href.split('/ar').join('') : location.origin + '/ar' + location.pathname
+    location.href = newPath;
+  })
+
+
+const filterProjects = document.querySelectorAll(
+  ".projects-services .filter button"
+);
+
+const projects = document.querySelectorAll(".projects-services .services-page");
+const projectsTitle = document.querySelector(".projects-services .header .base-title-section");
+
+filterProjects.forEach((filterBTN) => {
+  filterBTN.addEventListener("click", () => {
+    filterProjects.forEach((e) => {
+      e.classList.remove("active");
+    });
+    filterBTN.classList.add("active");
+    projectsTitle.textContent = filterBTN.textContent;
+    const typeFilter = filterBTN.getAttribute("data-type");
+    projects.forEach((project) => {
+      const typeProject = project.getAttribute("data-type");
+      typeProject === typeFilter
+        ? project.classList.add("active")
+        : project.classList.remove("active");
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const activeFilter = Object.values(filterProjects)
+    .filter((e) => e.classList.contains("active"))[0]
+    ?.getAttribute("data-type");
+  projects.forEach((project) => {
+    const typeProject = project.getAttribute("data-type");
+    typeProject === activeFilter
+      ? project.classList.add("active")
+      : project.classList.remove("active");
   });
 });
