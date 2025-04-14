@@ -212,15 +212,15 @@ containerNewsText.forEach((containerText) => {
       showMoreBTN.classList.contains("showall")
         ? showMoreBTN.classList.remove("showall")
         : showMoreBTN.classList.add("showall");
-        if (document.dir==='rtl') {
-          showMoreBTN.querySelector(".text-button").textContent =
-            !showMoreBTN.classList.contains("showall") ? "اقرأ المزيد" : "اقرأ أقل";
-          
-        }else{
+      if (document.dir === 'rtl') {
+        showMoreBTN.querySelector(".text-button").textContent =
+          !showMoreBTN.classList.contains("showall") ? "اقرأ المزيد" : "اقرأ أقل";
 
-          showMoreBTN.querySelector(".text-button").textContent =
-            !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
-        }
+      } else {
+
+        showMoreBTN.querySelector(".text-button").textContent =
+          !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+      }
     });
 });
 
@@ -233,11 +233,11 @@ languageBTN &&
 
 
 const filterProjects = document.querySelectorAll(
-  ".projects-services .filter button"
+  ".filter button"
 );
 
-const projects = document.querySelectorAll(".projects-services .services-page");
-const projectsTitle = document.querySelector(".projects-services .header .base-title-section");
+const projects = document.querySelectorAll(" .services-page");
+const projectsTitle = document.querySelector(".header .base-title-section");
 
 filterProjects.forEach((filterBTN) => {
   filterBTN.addEventListener("click", () => {
@@ -266,4 +266,17 @@ document.addEventListener("DOMContentLoaded", () => {
       ? project.classList.add("active")
       : project.classList.remove("active");
   });
+});
+
+const selectElements = document.querySelectorAll('select')
+
+selectElements.forEach(selectEle => {
+  NiceSelect.bind(selectEle, {
+    searchable: false,
+    placeholder: document.dir === "rtl" ? 'ترتيب حسب' : 'Sort By'
+  });
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".loading").classList.add("active");
 });
