@@ -212,8 +212,15 @@ containerNewsText.forEach((containerText) => {
       showMoreBTN.classList.contains("showall")
         ? showMoreBTN.classList.remove("showall")
         : showMoreBTN.classList.add("showall");
-      showMoreBTN.querySelector(".text-button").textContent =
-        !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+        if (document.dir==='rtl') {
+          showMoreBTN.querySelector(".text-button").textContent =
+            !showMoreBTN.classList.contains("showall") ? "اقرأ المزيد" : "اقرأ أقل";
+          
+        }else{
+
+          showMoreBTN.querySelector(".text-button").textContent =
+            !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+        }
     });
 });
 

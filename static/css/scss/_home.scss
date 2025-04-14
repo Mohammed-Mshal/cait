@@ -455,13 +455,17 @@
 
             .service {
                 background-color: #FAFAFA;
-
+                cursor: default;
+                display: flex;
+                flex-direction: column;
                 &:hover {
                     box-shadow: 4px 4px 10px 0 #1f97d32f
                 }
 
                 .container-text {
-
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
                     .title,
                     .description {
                         color: #000;
@@ -481,12 +485,19 @@
                         display: flex;
                         align-items: center;
                         gap: 20px;
-                        margin-top: 8px;
+                        margin-top: auto;
                         color: #281845;
+                        cursor: pointer;
+                        .arrow {
+                            transition: .3s all ease-in-out;
+                        }
 
                         .text-button {
                             font-size: 14px;
                             font-weight: 600;
+                        }
+                        &:hover .arrow{
+                            translate: 10px 0;
                         }
                     }
 

@@ -143,3 +143,10 @@ nav .container .nav-links li .submenu {
     translate: -50% 0;
   }
 }
+
+.projects-services .container .services-page .service .container-text .showmoretext .arrow{
+  scale: -1;
+}
+.projects-services .container .services-page .service .container-text .showmoretext:hover .arrow{
+  translate: -10px 0;
+}
