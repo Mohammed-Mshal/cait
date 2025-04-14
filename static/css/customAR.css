@@ -147,6 +147,6 @@ nav .container .nav-links li .submenu {
 .projects-services .container .services-page .service .container-text .showmoretext .arrow{
   scale: -1;
 }
-.projects-services .container .services-page .service .container-text .showmoretext:hover .arrow{
+.projects-services .container .services-page .service:hover .container-text .showmoretext .arrow{
   translate: -10px 0;
 }
