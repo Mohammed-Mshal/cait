@@ -267,3 +267,16 @@ document.addEventListener("DOMContentLoaded", () => {
       : project.classList.remove("active");
   });
 });
+
+const selectElements=document.querySelectorAll('select')
+
+selectElements.forEach(selectEle=>{
+  NiceSelect.bind(selectEle, {
+    searchable: false,
+    placeholder: document.dir==="rtl"?'ترتيب حسب':'Sort By'
+  });
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".loading").classList.add("active");
+});
