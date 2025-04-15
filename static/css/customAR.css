@@ -203,3 +203,7 @@ nav .container .nav-links li .submenu {
 .news-page .container .pagination a.arrow {
   scale: -1;
 }
+
+.our-specialties .container .specialtie .image-part {
+  transform: rotateY(180deg);
+}
