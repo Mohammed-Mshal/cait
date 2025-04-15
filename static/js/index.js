@@ -227,8 +227,11 @@ containerNewsText.forEach((containerText) => {
 const languageBTN = document.querySelector('.language')
 languageBTN &&
   languageBTN.addEventListener('click', () => {
-    const newPath = location.href.includes('/ar/') ? location.href.split('/ar').join('') : location.origin + '/ar' + location.pathname
-    location.href = newPath;
+    const value = location.pathname.includes("/ar/")
+    ? location.origin+location.pathname.replace("/ar/", "/")
+    : location.origin+"/ar" + location.pathname.replace("/ar/", "/");
+  location.href=value
+  
   })
 
 
