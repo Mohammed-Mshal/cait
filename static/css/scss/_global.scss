@@ -259,12 +259,14 @@ footer {
             }
 
             @media (max-width:558px) {
-
+                gap: 12px;
+                row-gap: 30px;
+                justify-content: space-between;
                 .list-links,
                 .list-address {
                     max-width: 48%;
                     flex: 1 1 auto;
-                    min-width: 200px;
+                    min-width: auto;
                 }
             }
 
@@ -272,9 +274,9 @@ footer {
 
                 .list-links,
                 .list-address {
-                    text-align: center;
+                    font-size: 14px;
                     flex: 1 1 100%;
-                    max-width: 100%;
+                    max-width: 45%;
                 }
             }
         }

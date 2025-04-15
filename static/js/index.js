@@ -158,12 +158,38 @@ animatedElements.forEach((element) => {
   }
 });
 
+const servicesSwiper = new Swiper(".swiper-services", {
+  spaceBetween: 16,
+  centerInsufficientSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: '.pagination-services',
+    type: 'bullets',
+    clickable: true,
+  },
+  breakpoints: {
+    699: {
+      slidesPerView: 2,
+    },
+    300: {
+      slidesPerView: 1,
+    },
+  },
+});
 const newsSwiper = new Swiper(".sliderNews", {
   spaceBetween: 16,
   centerInsufficientSlides: true,
   loop: true,
   autoplay: {
     delay: 3000,
+  },
+  pagination: {
+    el: '.pagination-news',
+    type: 'bullets',
+    clickable: true,
   },
   breakpoints: {
     1399: {
@@ -186,6 +212,11 @@ const sliderEvents = new Swiper(".sliderEvents", {
   loop: true,
   autoplay: {
     delay: 3000,
+  },
+  pagination: {
+    el: '.pagination-events',
+    type: 'bullets',
+    clickable: true,
   },
   breakpoints: {
     1399: {
@@ -212,32 +243,30 @@ containerNewsText.forEach((containerText) => {
       showMoreBTN.classList.contains("showall")
         ? showMoreBTN.classList.remove("showall")
         : showMoreBTN.classList.add("showall");
-      if (document.dir === 'rtl') {
+      if (document.dir === "rtl") {
         showMoreBTN.querySelector(".text-button").textContent =
-          !showMoreBTN.classList.contains("showall") ? "اقرأ المزيد" : "اقرأ أقل";
-
+          !showMoreBTN.classList.contains("showall")
+            ? "اقرأ المزيد"
+            : "اقرأ أقل";
       } else {
-
         showMoreBTN.querySelector(".text-button").textContent =
-          !showMoreBTN.classList.contains("showall") ? "Read More" : "Read Less";
+          !showMoreBTN.classList.contains("showall")
+            ? "Read More"
+            : "Read Less";
       }
     });
 });
 
-const languageBTN = document.querySelector('.language')
+const languageBTN = document.querySelector(".language");
 languageBTN &&
-  languageBTN.addEventListener('click', () => {
+  languageBTN.addEventListener("click", () => {
     const value = location.pathname.includes("/ar/")
-    ? location.origin+location.pathname.replace("/ar/", "/")
-    : location.origin+"/ar" + location.pathname.replace("/ar/", "/");
-  location.href=value
-  
-  })
+      ? location.origin + location.pathname.replace("/ar/", "/")
+      : location.origin + "/ar" + location.pathname.replace("/ar/", "/");
+    location.href = value;
+  });
 
-
-const filterProjects = document.querySelectorAll(
-  ".filter button"
-);
+const filterProjects = document.querySelectorAll(".filter button");
 
 const projects = document.querySelectorAll(" .services-page");
 const projectsTitle = document.querySelector(".header .base-title-section");
@@ -271,14 +300,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const selectElements = document.querySelectorAll('select')
+const selectElements = document.querySelectorAll("select");
 
-selectElements.forEach(selectEle => {
+selectElements.forEach((selectEle) => {
   NiceSelect.bind(selectEle, {
     searchable: false,
-    placeholder: document.dir === "rtl" ? 'ترتيب حسب' : 'Sort By'
+    placeholder: document.dir === "rtl" ? "ترتيب حسب" : "Sort By",
   });
-})
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".loading").classList.add("active");
