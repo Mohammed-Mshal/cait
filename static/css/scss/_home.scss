@@ -16,6 +16,21 @@
             padding-block: 150px;
             height: 800px;
 
+            .container {
+                scale: 1.4;
+                opacity: 0;
+                transition: .5s .2s all ease-in-out;
+            }
+
+            &.swiper-slide-active {
+                .container {
+
+                    scale: 1;
+                    opacity: 1;
+
+                }
+            }
+
             @media (max-width:992px) {
                 padding-block: 80px;
                 height: 700px;
@@ -60,6 +75,7 @@
         align-items: center;
         gap: 16px;
         color: white;
+
 
         .subtitle {
             font-size: clamp(16px, 2vw, 24px);
