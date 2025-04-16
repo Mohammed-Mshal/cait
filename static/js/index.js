@@ -65,9 +65,9 @@ const bannerSwipper = new Swiper(bannerSlider, {
     clickable: true,
     dynamicBullets: true,
   },
-  // autoplay: {
-  //   duration: 4000,
-  // },
+  autoplay: {
+    duration: 4000,
+  },
   hideInactiveSlides: true,
   on: {
     init: function () {
@@ -132,11 +132,8 @@ animatedElements.forEach((element) => {
       animate(element, {
         translateX: [-400, 0],
         opacity: [0, 1],
-        duration: 800,
         easing: "easeOutExpo",
-        duration: 800,
         autoplay: onScroll({
-          
           target: element
         }),
       });
@@ -146,9 +143,43 @@ animatedElements.forEach((element) => {
       animate(element, {
         translateX: [400, 0],
         opacity: [0, 1],
+        easing: "easeOutExpo",
+        autoplay: onScroll({
+          target: element
+        }),
+      });
+      break;
+    case "slide-text-top":
+      animate(element, {
+        translateY: [-100, 0],
+        opacity: [0, 1],
         duration: 800,
         easing: "easeOutExpo",
+        delay: 400,
+        autoplay: onScroll({
+          target: element
+        }),
+      });
+      break;
+    case "slide-text-bottom":
+      animate(element, {
+        translateY: [100, 0],
+        opacity: [0, 1],
         duration: 800,
+        easing: "easeOutExpo",
+        delay: 400,
+        autoplay: onScroll({
+          target: element
+        }),
+      });
+      break;
+    case "slide-box-center":
+      animate(element, {
+        scale: [0, 1],
+        opacity: [0, 1],
+        duration: 800,
+        easing: "easeOutExpo",
+
         autoplay: onScroll({
           target: element
         }),
