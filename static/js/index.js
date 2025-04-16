@@ -185,6 +185,28 @@ animatedElements.forEach((element) => {
         }),
       });
       break;
+    case "animate-button":
+      animate(element, {
+        scale: [0, 1],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        autoplay: onScroll({
+          target: element
+        }),
+      });
+      break;
+    case "slide-inner-banner":
+      animate(element, {
+        scale: [1.5, 1],
+        opacity: [0, 1],
+        duration: 800,
+        easing: "easeOutExpo",
+
+        autoplay: onScroll({
+          target: element
+        }),
+      });
+      break;
 
     default:
       break;
