@@ -110,25 +110,24 @@ animatedElements.forEach((element) => {
     case "fade":
       animate(element, {
         opacity: [0, 1],
-        duration: 800,
         easing: "easeInOutQuad",
         duration: 800,
-        delay: 200,
-        autoplay: onScroll(element),
+        autoplay: onScroll({
+          target: element
+        }),
       });
       break;
     case "slide-up":
       animate(element, {
         translateY: [100, 0],
         opacity: [0, 1],
-        duration: 800,
         easing: "easeOutExpo",
         duration: 800,
-        delay: 200,
-        autoplay: onScroll(element),
+        autoplay: onScroll({
+          target: element,
+        }),
       });
       break;
-
     case "slide-left":
       animate(element, {
         translateX: [-400, 0],
@@ -136,8 +135,10 @@ animatedElements.forEach((element) => {
         duration: 800,
         easing: "easeOutExpo",
         duration: 800,
-        delay: 200,
-        autoplay: onScroll(element),
+        autoplay: onScroll({
+          
+          target: element
+        }),
       });
       break;
 
@@ -148,8 +149,9 @@ animatedElements.forEach((element) => {
         duration: 800,
         easing: "easeOutExpo",
         duration: 800,
-        delay: 200,
-        autoplay: onScroll(element),
+        autoplay: onScroll({
+          target: element
+        }),
       });
       break;
 
@@ -312,3 +314,28 @@ selectElements.forEach((selectEle) => {
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".loading").classList.add("active");
 });
+
+
+const imageSpecialties = document.querySelector(".image-part");
+const ourSpecialties = document.querySelector(".our-specialties");
+// Add parallax effect to image specialties
+window.addEventListener('scroll', () => {
+  if (ourSpecialties && isElementInViewport(ourSpecialties)) {
+    const specialtiesRect = ourSpecialties.getBoundingClientRect();
+    const scrolledFromTop = specialtiesRect.top;
+    const rate = scrolledFromTop * 0.6;
+
+    if (imageSpecialties) {
+      imageSpecialties.style.transform = `translateY(${-rate}px)`;
+    }
+  }
+});
+
+// Helper function to check if element is in viewport
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom >= 0
+  );
+}
